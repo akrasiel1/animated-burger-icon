@@ -1,0 +1,1 @@
+##### A not-too-fancy, yet elegant burger icon. Animated using CSS and basic jQuery functions. 

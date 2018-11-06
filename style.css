@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000c70;
+}
+
+/* Menu icon is centered in the viewport */
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+/* The basic structure of the animated Menu Icon */
+
+.structure {
+    width: 120px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #6f98bb;
+    border-radius: 5px;
+    transition: .5s
+}
+
+.structure:before, .structure:after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 10px;
+    background: #6f98bb;
+    border-radius: 5px;
+    transition: .5s
+}
+
+/* Space between top, middle and bottom bars */
+
+.structure:before {
+    top: -35px;
+}
+
+.structure:after {
+    top: 35px;
+}
+
+/* Makes middle bar fade */
+.icon.active .structure {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Makes top bar rotate to 45 deg */
+.icon.active .structure:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Makes bottom bar rotate to 135 deg */
+.icon.active .structure:after {
+    transform: rotate(135deg);
+    top: 0;
+}
+
+
+.credits {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, 25%);
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #6f98bb;
+}
+
+/* CREDITS ANIMATION */
+
+.credits span {
+    color: rgba(255,0,0,0.3);
+    font-size: 20px;
+    animation: heartbeat 0.8s linear alternate infinite;
+}
+
+@keyframes heartbeat {
+    from {
+        color: rgba(255,0,0,0.3);
+    }
+    to {
+        color: rgb(255,0,0);
+    }
+}
